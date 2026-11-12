@@ -14,154 +14,169 @@
   --card-background: #f8f3ea;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  min-height: 100vh;
-  padding: 32px 16px;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  padding: 10px;
+  overflow: hidden;
   background: var(--cream);
   color: var(--espresso);
   font-family: "DM Sans", Arial, sans-serif;
 }
 
 .invitation {
-  width: min(100%, 900px);
+  width: min(100%, 950px);
+  height: 100%;
   margin: 0 auto;
-  padding: clamp(28px, 6vw, 64px);
-  position: relative;
+  padding: clamp(10px, 2vh, 22px) clamp(16px, 4vw, 45px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
   background: var(--paper);
   border: 1px solid var(--light-border);
-  box-shadow: 0 18px 55px rgba(66, 41, 31, 0.08);
+  box-shadow: 0 12px 40px rgba(66, 41, 31, 0.08);
   text-align: center;
 }
 
+/* Top decoration */
+
 .top-line {
-  width: 86px;
-  height: 4px;
-  margin: 0 auto 30px;
+  flex-shrink: 0;
+  width: 65px;
+  height: 3px;
+  margin: 0 auto;
   border-radius: 10px;
   background: var(--champagne);
 }
 
+/* Header section */
+
+.hero {
+  flex-shrink: 0;
+}
+
 .eyebrow {
-  margin: 0 0 12px;
+  margin: 4px 0 2px;
   color: var(--muted-brown);
-  font-size: 0.72rem;
+  font-size: clamp(0.55rem, 1.2vh, 0.7rem);
   font-weight: 700;
   letter-spacing: 0.24em;
 }
 
+/* Graduation cap */
+
 .cap {
-  width: 64px;
-  height: 55px;
-  margin: 0 auto 14px;
-  display: grid;
-  place-items: center;
+  width: 42px;
+  height: 34px;
+  margin: 0 auto 3px;
 }
 
 .cap svg {
-  width: 58px;
-  height: 45px;
   display: block;
+  width: 42px;
+  height: 34px;
 }
+
+/* Main heading */
 
 h1 {
   margin: 0;
   color: var(--espresso);
   font-family: "DM Serif Display", Georgia, serif;
-  font-size: clamp(2.7rem, 8vw, 5rem);
+  font-size: clamp(2rem, 5.5vh, 3.6rem);
   font-weight: 400;
-  line-height: 1;
+  line-height: 0.95;
 }
 
 h1 span {
   display: block;
-  margin-top: 8px;
+  margin-top: 2px;
   color: var(--brown);
   font-family: "Great Vibes", cursive;
   font-size: 0.8em;
 }
 
-.intro {
-  margin: 34px 0 4px;
-  color: var(--muted-brown);
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-}
-
-h2 {
-  margin: 0 0 16px;
-  color: var(--espresso);
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: clamp(1.7rem, 5vw, 2.3rem);
-  font-weight: 400;
-}
-
-.message {
-  max-width: 560px;
-  margin: 0 auto;
-  color: var(--brown);
-  font-size: 1rem;
-  line-height: 1.8;
-}
+/* Class of 2026 banner */
 
 .class-banner {
-  margin: 34px auto 38px;
-  padding: 18px 20px 14px;
-  max-width: 390px;
+  width: fit-content;
+  margin: 8px auto 13px;
+  padding: 5px 22px 6px;
   color: var(--paper);
-  background: linear-gradient(135deg, var(--espresso), var(--brown));
-  border: 2px solid var(--champagne);
-  outline: 1px solid rgba(216, 183, 122, 0.35);
-  outline-offset: 5px;
+  background: var(--espresso);
+  border: 1px solid var(--champagne);
+  border-radius: 3px;
 }
 
 .class-banner span {
   display: block;
   color: var(--champagne);
-  font-size: 0.78rem;
+  font-size: 0.48rem;
   font-weight: 700;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.25em;
 }
 
 .class-banner strong {
   display: block;
-  margin-top: 2px;
+  margin-top: 1px;
+  color: var(--paper);
   font-family: "DM Serif Display", Georgia, serif;
-  font-size: clamp(3.3rem, 10vw, 5rem);
+  font-size: 1.55rem;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.06em;
+}
+
+/* Invitation message */
+
+.intro {
+  margin: 12px 0 1px;
+  color: var(--muted-brown);
+  font-size: clamp(0.7rem, 1.5vh, 0.85rem);
+}
+
+h2 {
+  margin: 0;
+  color: var(--espresso);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(1.3rem, 3.2vh, 1.8rem);
+  font-weight: 400;
 }
 
 /* Date section */
 
 .event-info {
   width: 100%;
-  margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .date-detail {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding: 0 0 22px;
+  gap: 10px;
+  padding: 9px 0;
+  border-top: 1px solid var(--light-border);
   border-bottom: 1px solid var(--light-border);
 }
 
 .detail-icon {
-  display: block;
-  margin: 0;
   color: var(--champagne);
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1;
 }
 
 .detail-label {
-  margin: 0 0 7px;
+  margin: 0 0 2px;
   color: var(--muted-brown);
-  font-size: 0.68rem;
+  font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.2em;
 }
@@ -170,150 +185,204 @@ h2 {
   margin: 0;
   color: var(--espresso);
   font-family: "DM Serif Display", Georgia, serif;
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2vh, 1.1rem);
 }
 
 /* Celebration schedule */
 
 .schedule {
-  padding-top: 25px;
+  padding-top: 10px;
 }
 
 .schedule-heading {
-  margin: 0 0 35px;
+  margin: 0 0 10px;
   color: var(--muted-brown);
-  font-size: 0.85rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.25em;
-  text-align: center;
+  letter-spacing: 0.23em;
 }
 
 .schedule-cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 35px;
+  gap: 15px;
 }
 
 .schedule-card {
-  padding: 42px 20px;
+  min-width: 0;
+  min-height: 65px;
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   background: var(--card-background);
   border: 1px solid var(--light-border);
-  text-align: center;
 }
 
-.event-number {
-  margin: 0 0 22px;
-  color: #c49b59;
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-}
+/* Clickable venue names */
 
-.schedule-card h3 {
-  margin: 0 0 12px;
-  color: var(--espresso);
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: clamp(1.5rem, 3vw, 2.1rem);
-  font-weight: 400;
-}
-
-.event-type {
-  margin: 0 0 25px;
-  color: var(--muted-brown);
-  font-size: 1rem;
-}
-
-.time-value {
-  margin: 0 0 38px;
-  color: var(--espresso);
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.map-link {
-  display: inline-block;
-  padding-bottom: 9px;
+.location-link {
+  min-width: 0;
   color: var(--brown);
-  border-bottom: 1px solid var(--champagne);
-  font-size: 1rem;
-  font-weight: 700;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(0.9rem, 2vh, 1.15rem);
+  line-height: 1.2;
+  text-align: left;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.map-link:hover {
+.location-link:hover {
   color: #b18b4f;
+}
+
+/* Ceremony times */
+
+.time-value {
+  flex-shrink: 0;
+  margin: 0;
+  color: var(--espresso);
+  font-size: clamp(0.68rem, 1.5vh, 0.85rem);
+  font-weight: 700;
+  text-align: right;
+}
+
+.map-hint {
+  margin: 6px 0 0;
+  color: var(--muted-brown);
+  font-size: 0.62rem;
+  font-style: italic;
 }
 
 /* Closing message */
 
 .closing {
   max-width: 540px;
-  margin: 35px auto 26px;
+  margin: 0 auto;
   color: var(--espresso);
   font-family: "DM Serif Display", Georgia, serif;
-  font-size: 1.22rem;
+  font-size: clamp(0.8rem, 1.8vh, 1rem);
   font-style: italic;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
-.ribbon {
-  margin: 0 auto 30px;
-  padding: 15px 18px;
-  color: var(--paper);
-  background: var(--espresso);
-  border-top: 2px solid var(--champagne);
-  border-bottom: 2px solid var(--champagne);
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: clamp(1.05rem, 3.6vw, 1.45rem);
+/* Footer */
+
+footer {
+  flex-shrink: 0;
+  padding-bottom: 2px;
 }
 
 footer p {
   margin: 0;
   color: var(--muted-brown);
-  font-size: 0.9rem;
+  font-size: 0.72rem;
 }
 
 .signature {
-  margin: 4px 0;
+  margin: 0;
   color: var(--brown);
   font-family: "Great Vibes", cursive;
-  font-size: clamp(2.4rem, 7vw, 3.5rem);
+  font-size: clamp(1.8rem, 4vh, 2.5rem);
 }
 
-.footer-note {
-  margin-top: 8px;
-  font-size: 0.78rem;
+.contact {
+  margin-top: 3px;
+  color: var(--muted-brown);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
-/* Mobile responsiveness */
+/* Smaller screens */
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
+
   body {
-    padding: 12px 8px;
+    padding: 5px;
   }
 
   .invitation {
-    padding: 30px 18px;
+    padding: 9px 12px;
   }
 
   .schedule-cards {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 7px;
   }
 
   .schedule-card {
-    padding: 32px 18px;
+    min-height: 48px;
+    padding: 8px 10px;
   }
 
-  .message {
-    font-size: 0.94rem;
+  .location-link {
+    font-size: clamp(0.82rem, 2vh, 1rem);
+  }
+
+  .time-value {
+    font-size: clamp(0.65rem, 1.5vh, 0.8rem);
+  }
+
+  .map-hint {
+    margin-top: 4px;
+  }
+}
+
+/* Extra compact layout for short screens */
+
+@media (max-height: 650px) {
+
+  .invitation {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .eyebrow {
+    margin-top: 1px;
+  }
+
+  .cap {
+    height: 27px;
+  }
+
+  .cap svg {
+    height: 27px;
+  }
+
+  .intro {
+    margin-top: 5px;
+  }
+
+  .class-banner {
+    margin-top: 5px;
+    margin-bottom: 7px;
   }
 
   .date-detail {
-    gap: 10px;
+    padding: 5px 0;
   }
 
-  .detail-value {
-    font-size: 1.05rem;
+  .schedule {
+    padding-top: 6px;
+  }
+
+  .schedule-heading {
+    margin-bottom: 5px;
+  }
+
+  .schedule-card {
+    min-height: 42px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .closing {
+    font-size: 0.75rem;
+  }
+
+  .signature {
+    font-size: 1.7rem;
   }
 }
